@@ -69,7 +69,7 @@ int main() {
     
     // Sort by frequency descending, then by word ascending for tie-break
     std::sort(freqVec.begin(), freqVec.end(),
-              [](const auto& a, const auto& b) {
+              [](const std::pair<std::string, int>& a, const std::pair<std::string, int>& b) {
                   if (a.second != b.second) {
                       return a.second > b.second;
                   }

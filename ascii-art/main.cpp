@@ -3,6 +3,7 @@
 #include <vector>
 #include <map>
 #include <cctype>
+#include <limits>
 
 // Function prototypes
 void drawRectangle(int width, int height, char ch = '*');
@@ -13,6 +14,12 @@ void showMenu();
 char getChoice();
 int getDimension(const std::string& prompt);
 char getCharacter();
+
+// Helper to clear input buffer
+void clearInputBuffer() {
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
 
 int main() {
     bool quit = false;
@@ -44,7 +51,7 @@ int main() {
             case '4': { // Text to ASCII
                 std::cout << "Enter text (short word/phrase): ";
                 std::string text;
-                std::getline(std::cin >> std::ws, text);
+                std::getline(std::cin, text);
                 std::cout << textToASCII(text) << std::endl;
                 break;
             }
@@ -356,6 +363,7 @@ void showMenu() {
 char getChoice() {
     char choice;
     std::cin >> choice;
+    clearInputBuffer(); // Clear the newline and any extra input
     return choice;
 }
 
@@ -366,10 +374,10 @@ int getDimension(const std::string& prompt) {
         std::cin >> value;
         if (std::cin.fail() || value <= 0) {
             std::cin.clear();
-            std::cin.ignore(10000, '\n');
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Please enter a positive integer.\n";
         } else {
-            std::cin.ignore(10000, '\n'); // Clear newline
+            clearInputBuffer(); // Clear the newline and any extra input
             break;
         }
     }
