@@ -144,48 +144,76 @@ Enter character (default *): #
 
 ## Building and Running
 
-Each program can be compiled and run independently:
+Each program can be compiled and run using the provided Makefile:
+
+### Using Makefile (Recommended)
+```bash
+# Build all programs
+make
+
+# Build a specific program
+make ascii-art        # builds ascii-art.out
+make days-since       # builds days-since.out
+make loan-calculator  # builds loan_calculator.out
+make minesweeper      # builds minesweeper.out
+make multiplication-table  # builds mult.out
+make word-freq        # builds wordfreq.out
+
+# Run a specific program (builds if necessary, then runs)
+make run-ascii-art
+make run-days-since
+make run-loan-calculator
+make run-minesweeper
+make run-multiplication-table
+make run-word-freq
+
+# Clean build artifacts
+make clean
+```
+
+### Individual Compilation (Alternative)
+Each program can still be compiled individually with g++:
 
 ### Multiplication Table
 ```bash
 cd multiplication-table
-g++ main.cpp -o mult
-./mult
+g++ -std=c++11 -Wall -Wextra main.cpp -o mult.out
+./mult.out
 ```
 
 ### Days Since Calculator
 ```bash
 cd days-since
-g++ main.cpp -o days-since
-./days-since
+g++ -std=c++11 -Wall -Wextra main.cpp -o days-since.out
+./days-since.out
 ```
 
 ### Word Frequency Analyzer
 ```bash
 cd word-freq
-g++ main.cpp -o wordfreq
-./wordfreq
+g++ -std=c++11 -Wall -Wextra main.cpp -o wordfreq.out
+./wordfreq.out
 ```
 
 ### Loan Amortization Calculator
 ```bash
 cd loan-calculator
-g++ main.cpp -o loancalc
-./loancalc
+g++ -std=c++11 -Wall -Wextra main.cpp -o loan_calculator.out
+./loan_calculator.out
 ```
 
 ### Minesweeper Clone
 ```bash
 cd minesweeper
-g++ main.cpp -o minesweeper
-./minesweeper
+g++ -std=c++11 -Wall -Wextra main.cpp -o minesweeper.out
+./minesweeper.out
 ```
 
 ### ASCII Art Generator
 ```bash
 cd ascii-art
-g++ main.cpp -o asciiart
-./asciiart
+g++ -std=c++11 -Wall -Wextra main.cpp -o ascii-art.out
+./ascii-art.out
 ```
 
 ## Requirements
@@ -195,5 +223,5 @@ g++ main.cpp -o asciiart
 ## Notes
 - The days since calculator uses noon time for both dates to avoid daylight saving time issues.
 - Input validation ensures that only positive integers are accepted where appropriate.
-- The executables are not included in the Git repository (only source code is tracked).
+- The executables (with .out extension) are not included in the Git repository (only source code is tracked) as specified in .gitignore.
 - Each program has been tested and verified to work correctly.
