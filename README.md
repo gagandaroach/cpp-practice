@@ -1,5 +1,26 @@
 # C++ Practice Problems
 
+## About This Repository & Development Environment
+
+This repository demonstrates the capabilities of the **Nemotron 3 Super 120B** model when running locally with **opencode** on an **NVIDIA RTX Pro 6000 96GB (Founder Edition)**.
+
+Each of the six C++ practice programs in this repository was created with AI-assisted development using:
+- **Model**: Nemotron 3 Super 120B (NVIDIA's advanced language model)
+- **Development Tool**: opencode (local AI-powered coding assistant)
+- **Hardware**: NVIDIA RTX Pro 6000 96GB Founder Edition GPU
+  - Memory: 96 GB GDDR6
+  - Architecture: Ada Lovelace
+  - CUDA Cores: 18176 (verify with `nvidia-smi`)
+  - Tensor Cores: 568 (4th generation)
+  - Memory Bandwidth: 864 GB/s
+  - Display Outputs: 4x DisplayPort 1.4a
+
+This setup showcases how powerful local AI development can be for:
+- Learning and practicing programming concepts
+- Generating functional code across multiple domains
+- Rapid prototyping of educational examples
+- Creating well-documented, tested codebases
+
 This repository contains six beginner-to-intermediate level C++ programs designed to practice various programming concepts.
 
 ## Programs
@@ -16,11 +37,11 @@ A program that:
 ```
 Enter column size: 
 Enter row size: 
-   1   2   3   4   5
-   2   4   6   8  10
-   3   6   9  12  15
-   4   8  12  16  20
-   5  10  15  20  25
+    1   2   3   4   5
+    2   4   6   8  10
+    3   6   9  12  15
+    4   8  12  16  20
+    5  10  15  20  25
 ```
 
 ### 2. Days Since Calculator (`days-since/`)
